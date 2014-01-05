@@ -5,6 +5,49 @@
 	id="WebApp_ID" version="3.0">
 	<display-name>JSPExamples</display-name>
 	<welcome-file-list>
+		<welcome-file>login.jsp</welcome-file>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
+	<servlet>
+		<servlet-name>configexample</servlet-name>
+		<jsp-file>/configex.jsp</jsp-file>
+		<init-param>
+			<param-name>dname</param-name>
+			<param-value>sun.jdbc.odbc.JdbcOdbcDriver</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>configexample</servlet-name>
+		<url-pattern>/configex</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>applicationexample</servlet-name>
+		<jsp-file>/applicationex.jsp</jsp-file>
+		<init-param>
+			<param-name>dname</param-name>
+			<param-value>sun.jdbc.odbc.JdbcOdbcDriver</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>applicationexample</servlet-name>
+		<url-pattern>/applicationex</url-pattern>
+	</servlet-mapping>
+	<context-param>
+		<param-name>dname</param-name>
+		<param-value>sun.jdbc.odbc.JdbcOdbcDriver</param-value>
+	</context-param>
+	<error-page>
+		<exception-type>java.lang.Exception</exception-type>
+		<location>/error.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/error.jsp</location>
+	</error-page>
+	<jsp-config>
+		<taglib>
+			<taglib-uri>sreeuri</taglib-uri>
+			<taglib-location>/WEB-INF/mytags.tld</taglib-location>
+		</taglib>
+	</jsp-config>
 </web-app>
